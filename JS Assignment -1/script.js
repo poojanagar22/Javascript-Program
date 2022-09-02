@@ -13,9 +13,13 @@ function fetchdata(){
     }).then((data)=>{
 
         console.log(data);
+        document.getElementById('Details').innerHTML=JSON.stringify(data.first_name + ' ' + data.last_name);
+        document.getElementById('email').innerHTML=JSON.stringify(data.email);
 
     })
 
     }
+ 
+  fetchdata();
 
-    fetchdata();
+  
