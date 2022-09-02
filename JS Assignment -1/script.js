@@ -15,6 +15,8 @@ function fetchdata(){
         console.log(data);
         document.getElementById('Details').innerHTML=JSON.stringify(data.first_name + ' ' + data.last_name);
         document.getElementById('email').innerHTML=JSON.stringify(data.email);
+        document.getElementById('imga').innerHTML=`<img src="${data.avatar}"> `;
+
 
     })
 
