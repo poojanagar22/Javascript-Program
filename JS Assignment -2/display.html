@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery Form</title>
+    <style>
+       body{
+        padding: 20px 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .container{
+        padding: 14px 14px;
+        background-color: antiquewhite;
+        border: 5px solid rgb(144, 109, 56) !important;
+        width:40%;
+        height: 25rem;
+      }
+
+ form { 
+  display:block; 
+  width:100%; 
+  margin:0 auto; 
+ }
+
+input, select { 
+  width: 95%;
+  padding: 12px 20px;
+  margin: 8px 8px;
+  box-sizing: border-box;
+  float:left;
+}
+
+a{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: #507b2f;
+    padding: 10px;
+    margin: 18px 18px !important;
+    text-align: center;
+    border-radius: 5px;
+    color: whitesmoke;
+    font-weight: 500;
+
+}
+
+/* .myButton { 
+  cursor:pointer; 
+  float:right;
+  margin:3% 30% 0 0; 
+} */
+.hideELement { 
+  display:none; 
+}
+span { 
+  color: #f00; 
+  font-weight:bold; 
+  float:left; 
+  display:none; 
+  margin:1% 0 0 0; 
+}
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1 style="text-align:center;">Fill Details</h1>
+  <form>
+		<input type="text" placeholder="Enter Your First Name" name="First Name" /><span>Incorrect value</span> <br/>
+    	<input type="text" placeholder="Enter Your Last Name"name="Last Name" /><span>Incorrect value</span> <br/>
+    	<input type="text" placeholder="Enter Your Address" name="Address" /><span>Incorrect value</span> <br/>
+      <br/>
+    <select id="country" name="Country">
+        <option>Select Country</option>
+        <option>USA</option>
+        <option>India</option>
+        <option>UK</option>
+ </select>
+    	<a class="myButton">Submit</a>
+</form>
+        <div class="myresults"></div>
+      </div>
+
+     
+</body>
+<script type="text/javascript">
+$(document).ready(function() {
+	$('.myButton').click(function() {
+		$(".myresults").html("");
+    $(':input').each(function(index){
+			if($(this).val() == "") {
+				$('span').show();
+			} else {
+    		//console.log($(this));
+    		//$("#myresults").append("<b>Input Type:</b> " + $(this).attr('type') + " ");
+    			$(".myresults").append("<p>" + $(this).attr('name') + ": " + $(this).val() +"</p>"); 
+          $("#country option:selected").text();
+				$('form').addClass('hideELement');
+			}
+   		});
+	});
+
+});
+
+
+</script>
+</html>
