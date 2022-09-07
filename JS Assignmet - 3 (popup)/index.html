@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bootstrap JS Popup</title>
+
+<link href="./style.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <div class="modal">
+    <div class="modal-content">
+        <span class="close-button">×</span>
+       <img id="img1"/>
+    </div>
+</div>
+  <h1>Assignment - 3</h1>
+  <div class="grid-container">
+    <div class="grid-item">
+      <button class="trigger">Apple it is..!!</button>
+    </div>
+
+    <div class="grid-item">
+      <button class="trigger">Banana it is..!!</button>
+    </div>
+    <div class="grid-item">
+      <button class="trigger">Watermelon it is..!!</button>
+    </div>
+  
+     </div>
+     
+
+
+
+  <script type="text/javascript">
+const modal = document.querySelector(".modal");
+var trigger = document.querySelector(".trigger");
+const closeButton = document.querySelector(".close-button");
+
+function toggleModal() {
+    modal.classList.toggle("show-modal");
+    document.getElementById("img1").setAttribute('src', "./banana.jpg")
+}
+
+trigger.addEventListener('click',toggleModal)
+// ()=>{
+//   modal.classList.toggle("show-modal");
+//     document.getElementById('img1').setAttribute('src','./banana.jpg')
+// }
+
+// function windowOnClick(event) {
+//     if (event.target === modal) {
+//         toggleModal();
+//     }
+// }
+
+
+//trigger.addEventListener("click", toggleModal);
+closeButton.addEventListener("click", toggleModal);
+window.addEventListener("click", windowOnClick);
+
+  </script>
+
+</body>
+
+</html>
