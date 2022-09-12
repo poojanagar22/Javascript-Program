@@ -1,0 +1,30 @@
+.card{
+    width:20rem;
+}
+.modal{
+    display: none;
+    z-index: 1;
+    left:30%;
+    right: 50%;
+    top:50%;
+    width:30%;
+}
+.modal-content{
+    height: 300px;
+    box-sizing: border-box;
+}
+.close{
+    float: right;
+    font-size: 30px;
+    cursor: pointer;
+    text-align: right;
+    margin-right: 20px;
+}
+
+.card-modal-open-button{
+    display: flex;
+    margin: 30px;
+    box-sizing: border-box;
+    border: none;
+    background-color: transparent;
+}

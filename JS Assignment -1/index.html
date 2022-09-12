@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="text/javascript" src="./script.js"></script>
+    <!-- <script type="text/javascript" src="./script.js"></script> -->
     <title>JS API Call</title>
 <style>
     button{
@@ -39,14 +39,62 @@ img {
 </style>
 </head>
 <body>
-   <button id="myBtn">Check the Console</button>
+   <button id="getText">Check the Console</button>
    <br/><br/>
    <div class="card">
-  <div id="imga"></div>
+    <div id="image"></div>
     <div class="container">
-      <h1 id="Details"></h1> 
-      <h3 id="email"></h3>
+      <div id="msg"><br><br></div>
+      <div id="output" >
     </div>
   </div>
+  </div>
+  <script>
+    document.getElementById('getText').addEventListener('click',getData)
+       
+       function getData(){
+        let url='https://random-data-api.com/api/v2/users'
+        fetch(url)
+        .then(res=>res.json())
+        .then((data)=>{
+            var finalData=''
+            var message=''
+            console.log(data)
+             finalData+=` 
+             <table>
+                <tr>
+                <td>First Name :</td>    
+                <td>${data.first_name}</td>
+            </tr>
+            <tr>
+                <td>Last Name :</td>    
+                <td>${data.last_name}</td>
+            </tr>
+            <tr>
+                <td>User Name :</td>    
+                <td>${data.username}</td>
+            </tr>
+            <tr>
+                <td>Email :</td>    
+                <td>${data.email}</td>
+            </tr>
+            <tr>
+                <td>Phone Number :</td>    
+                <td>${data.phone_number}</td>
+            </tr>
+            <tr>
+                <td>Date of Birth :</td>    
+                <td>${data.date_of_birth}</td>
+            </tr>
+            ` 
+            // document.getElementById('output').innerHTML=data.first_name;
+            //JSON.stringify(fname);
+            console.log(finalData)
+            document.getElementById('output').innerHTML=finalData 
+            document.getElementById('image').innerHTML=`<img src="${data.avatar}">`
+        })
+        .catch((err)=>console.log(err))
+       }
+  </script>
 </body>
 </html>
