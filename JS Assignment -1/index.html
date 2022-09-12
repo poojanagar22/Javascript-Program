@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <script type="text/javascript" src="./script.js"></script> -->
     <title>JS API Call</title>
 <style>
+  
     button{
         background-color: rgb(133, 91, 136);
         color: white;
@@ -17,6 +17,7 @@
     }
 
     .card {
+      
   background-color: rgb(106, 132, 154);
   color: rgb(228, 222, 222);
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -39,14 +40,17 @@ img {
 </style>
 </head>
 <body>
-   <button id="getText">Check the Console</button>
-   <br/><br/>
+  
+   <div class="container">
+    <button id="getText">Check the Console</button>
+    <br/><br/>
    <div class="card">
-    <div id="image"></div>
-    <div class="container">
+    <center>
+   <div id="image"></div>
       <div id="msg"><br><br></div>
-      <div id="output" >
+      <div id="output">
     </div>
+  </center>
   </div>
   </div>
   <script>
@@ -63,16 +67,8 @@ img {
              finalData+=` 
              <table>
                 <tr>
-                <td>First Name :</td>    
-                <td>${data.first_name}</td>
-            </tr>
-            <tr>
-                <td>Last Name :</td>    
-                <td>${data.last_name}</td>
-            </tr>
-            <tr>
-                <td>User Name :</td>    
-                <td>${data.username}</td>
+                <td>Name :</td>    
+                <td>${data.first_name + ' ' + data.last_name}</td>
             </tr>
             <tr>
                 <td>Email :</td>    
